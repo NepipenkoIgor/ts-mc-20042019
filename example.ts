@@ -1,8 +1,10 @@
-Object.defineProperty(window, 'MySweetApp', {value: 'v1.0.0', writable: true});
+/// <reference lib="es2015.promise" />
+// declare const Promise: { resolve: (a: string) => Promise<string> };
+//Object.defineProperty(window, 'MySweetApp', {value: 'v1.0.0', writable: true});
 
-function deliveryMethod(): string {
+function deliveryMethod(): Promise<string> {
     // TODO
-    return 'overnight';
+    return Promise.resolve('text');
 }
 
 function shipWeight(): number {
@@ -32,3 +34,5 @@ function sendUpdates(emailAddr: string | string[]): void {
         sendEmail(emailAddr.trim());
     }
 }
+
+console.log('hi all ');
