@@ -160,14 +160,143 @@
 // function a(): void {
 //
 // }
-function errorHandler(): never {
-    throw new Error('asd');
+// function errorHandler(): never {
+//     throw new Error('asd');
+// }
+//
+// function a() {
+//     try {
+//
+//     } catch (err) {
+//         errorHandler();
+//     }
+// }
+
+// const user: {
+//     readonly firstName: string;
+//     readonly age?: number;
+//     getFullName?(): void;
+// } = {
+//     firstName: 'Igor',
+// }
+//
+// let keys: keyof (typeof user);
+// keys = 'firstName';
+//
+// let nameType: (typeof user)['firstName'] = 1;
+// let user1: {
+//    readonly  [key: string]: string | number;
+// } = {
+//     firstName: 'Igor',
+// };
+//
+// user1.firstName = 'Vlad';
+// user1.age = 1;
+//
+// let arr: number [] = [1, 2, 3];
+//
+// arr[100] = 1;
+// arr.push(2);
+//
+//
+// let arr1: ReadonlyArray<number> = [1, 2, 3];
+// arr1[100] = 1;
+// arr1.push(2);
+//
+// let arr2: readonly [string, number] = ['text', 1];
+// arr2[100] = 1;
+// arr2.push(2);
+// arr2[0] = 'sd';
+//
+// let p: Partial<typeof user>
+
+// let x: number = 10 as const;
+//
+// x = 11;
+//
+// let y = [10, 11] as const;  //readonly [number, number]
+// y.push(22);
+//
+//
+// let z = {firstName: 'Igor' } as const; // {readonly firstName: string'}
+// z.firstName = 'Vlad';
+// type Age<T> = {
+//     readonly age: T;
+//     getStatus?: () => { age: number }
+// };
+//
+// interface IName {
+//     readonly firstName: string;
+//     getStatus?: () => { firstName: string }
+// }
+//
+// interface IUserAccount<UserId> extends IName, Age<string> {
+//     _id: UserId;
+//     getStatus?: () => { age: number, firstName: string };
+//
+//     getFullName(): this;
+// }
+//
+// let admin: IUserAccount<number>;
+// let user: IUserAccount<string>;
+
+// class User<U> implements IUserAccount {
+//     public readonly firstName: string = 'Igor';
+//     public readonly age: number = 33;
+//
+//
+//     public info!: U;
+//
+//
+//     public getFullName(): this {
+//         console.log(this.firstName);
+//         return this;
+//     }
+// }
+//
+// let u1 = new User<string>()
+//
+// function someFn<T, U>(a: T): U {
+//   return
+// }
+
+// const user1: UserAccount = {
+//     firstName: 'Igor',
+// }
+//
+// const user2: IUserAccount = {
+//     firstName: 'Igor',
+// }
+
+// type User = { id: number, name: string }
+//
+// interface IAccount<T extends User> {
+//     info: T;
+// }
+//
+// let user1: IAccount<{ id: 1, famale: false, name: string }>;
+//
+// interface ICommonUser<T = number, U = IAccount<{ id: 1, famale: false, name: string }>> {
+//     id: T;
+//     info: U;
+// }
+//
+// let u2: ICommonUser;
+
+interface IAccount {
+    firstName: string;
+    age: number;
 }
 
-function a() {
-    try {
+type Immutable<T> = {
+    readonly [P in keyof T]: T[P]
+};
+type Mutable<T> = {
+    -readonly [P in keyof T]?: T[P]
+};
 
-    } catch (err) {
-        errorHandler();
-    }
-}
+let u: Mutable<Immutable<IAccount>> = {
+    firstName: 'Igor',
+};
+
+let u: Partial

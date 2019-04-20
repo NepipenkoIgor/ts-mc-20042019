@@ -5,7 +5,7 @@ const HtmlWebpackPlugin = require('html-webpack-plugin');
 
 module.exports = {
     mode: 'none',
-    entry: './src',
+    entry: './src/menu',
     output: {
         filename: "[name].bundle.js",
         //@ts-ignore
@@ -17,12 +17,13 @@ module.exports = {
     },
     module: {
         rules: [
-            {test: /\.ts$/, loader: 'ts-loader'}
+            {test: /\.ts$/, loader: 'ts-loader'},
+            {test: /\.css$/, use: ['style-loader', 'css-loader']},
         ]
     },
     plugins: [
         new HtmlWebpackPlugin({
-            template: './src/index.html'
+            template: './src/menu/index.html'
         })
     ]
 }
