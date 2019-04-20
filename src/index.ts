@@ -1,9 +1,5 @@
-console.log('hi all');
+import { skipLikeSloth1 } from './ex1';
+import { skipLikeSloth2 } from './ex2';
 
-let b: boolean = false;
-
-function a(): never {
-    throw  new Error();
-}
-
-a();
+skipLikeSloth1(['hi ', 'all', 'typescript', 'is', 'awesome']);
+skipLikeSloth2(['hi ', 'all', 'typescript', 'is', 'awesome']);

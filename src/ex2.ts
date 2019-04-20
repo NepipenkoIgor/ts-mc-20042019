@@ -23,10 +23,10 @@ async function* getItemsReallySlowly<T>(items: Iterable<T>): AsyncIterableIterat
 }
 
 
-async function skipLikeSloth(items: string[]): Promise<void> {
+export async function skipLikeSloth2(items: string[]): Promise<void> {
     for await (const item of getItemsReallySlowly(items)) {
         console.log(item);
     }
 }
 
-skipLikeSloth(['hi ', 'all', 'typescript', 'is', 'awesome']);
+
