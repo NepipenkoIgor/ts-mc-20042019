@@ -2,7 +2,7 @@
   "name": "ts-mc-200419",
   "version": "1.0.0",
   "description": "",
-  "main": "example.js",
+  "main": "example.ts",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
@@ -10,6 +10,7 @@
   "author": "",
   "license": "ISC",
   "devDependencies": {
+    "tslint": "^5.16.0",
     "typescript": "^3.4.4"
   }
 }
