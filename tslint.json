@@ -68,7 +68,7 @@
         ],
         "max-classes-per-file": [
             true,
-            1
+            100
         ],
         "max-file-line-count": [
             true,
@@ -82,7 +82,7 @@
             true,
             2
         ],
-        "no-default-export": true,
+        "no-default-export": false,
         "prefer-const": true,
         "array-type": [
             true,
